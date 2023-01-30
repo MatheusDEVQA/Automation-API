@@ -1,7 +1,15 @@
+import io.restassured.RestAssured;
+import io.restassured.http.ContentType;
+import io.restassured.response.Response;
 import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
+
+import static org.hamcrest.Matchers.hasSize;
+import static sun.jvm.hotspot.utilities.AddressOps.greaterThan;
 
 public class BookingTest {
 
+    RestAssured request;
     @Test
     public void getAllBookingsById_returnOk() {
         Response response = request
